@@ -14,6 +14,8 @@ function scrollToSection(target) {
 }
 
 window.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    
     if(reload === false){
     
         if (event.deltaY > 0 && position < numSection ) {
@@ -25,11 +27,22 @@ window.addEventListener('wheel', (event) => {
         if(position <= numSection && position >= 0){
             scrollToSection(sections[position].offsetTop);
         }
-        console.log(position);
+
         reload = true;
 
         setTimeout(() =>{
             reload = false;
         },120);
     }    
-});
+}, { passive: false});
+
+
+let returnButton = document.getElementById("returnFooter");
+let returnButton2 = document.getElementById("returnHeader");
+
+returnButton.addEventListener('click', (event)=> {
+    position = 0; 
+})
+returnButton2.addEventListener('click', (event)=> {
+    position = 0; 
+})

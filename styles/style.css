@@ -14,7 +14,6 @@
 }
 
 html{    
-    overflow: hidden;
     scroll-behavior: smooth;
 }
 
@@ -22,6 +21,19 @@ header {
     margin-top: 0.2rem;
     position: sticky;
     top: 1rem;
+    margin-top: 5px;
+
+    animation: nav-animation ease-in-out both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+}
+
+@keyframes nav-animation {
+    to{
+        background-color: hsla(0, 0%, 68%, 0.534);
+        padding: 5px 2rem 5px 2rem;
+        border-radius: 2rem;
+    }
 }
 
 body {
@@ -238,30 +250,34 @@ body {
     font-size: 2.5rem;
 }
 
-.tools{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    
+.tools{    
+    min-width: 100vh;
     min-height: 100vh;
 }
 
 .tools-grid{
-   height: 100%;
-   width: 100%;
    display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
+   grid-template-columns: 
+           repeat(
+           auto-fill,
+           minmax(375px,1fr)
+           ); 
    gap: 1rem;
 
 }
 
 .toolSections{
+   min-height: 350px;
+   height: 100%;
+   width: 100%;
    justify-self: center;
 }
 
 .toolSectionWrapper{
+
+    height: 100%;
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -275,35 +291,41 @@ body {
 .toolSectionWrapper h3{
     /*something*/
     margin-top: 1.2em;
+    
+    transition: transform ease 0.5s;
 }
 
 .toolsContainer{
+
+   height: 80%;
+   width: 80%; 
    background-color: rgb(78, 78, 78);
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   
-
+   grid-template-columns: 
+        repeat(
+            auto-fill,
+            minmax(80px,1fr)
+        );
+    
    gap: 0.2em;
-   min-height: 250px;
-   margin: 0rem 4rem 2rem 4rem;
+   
+   margin-bottom: 2rem;
    padding: 0.5rem;
    border-radius: 0.5rem;
    border-style:solid;
    border-color:#444444;
 
-   transition: all ease 0.2s;
+   transition: border ease 1s,
+               background-color ease 0.5s;
 }
 
 .toolSectionWrapper:hover h3{
-
-    border-radius: 1em;
-    box-shadow: 0em 0em 1em 0.5em #f5f5f5;
-
+    transform: scale(1.1);
 } 
 
 
 .toolSectionWrapper:hover .toolsContainer{
-    box-shadow: 0em 0em 1em 0em #f5f5f5;
+    background-color: lightslategrey ;
 }
 
 .tool{ 
