@@ -2,7 +2,18 @@
 
 
 :root{
-    --MAINCOLOR: #1f1f1f ;
+    --MAIN-BGCOLOR: #667eea;
+    --SECONDARY-BGCOLOR: #764ba2;
+    
+    --TEXT-HOVER-COLOR: #5a8df3;
+
+    --MAIN-TEXT-COLOR:#ffffff;
+    --TEXT-COLOR: #e1e1e1;
+
+    --BUTTON-COLOR: #13152b;
+
+    --CONTAINER-COLOR: #4e598c;
+  
 }
 
 * {
@@ -10,7 +21,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, Helvetica, sans-serif;
-    color: rgb(199, 199, 199);
+    color: var(--MAIN-TEXT-COLOR);
 }
 
 html{    
@@ -30,7 +41,7 @@ header {
 
 @keyframes nav-animation {
     to{
-        background-color: hsla(0, 0%, 68%, 0.534);
+        background-color: var(--CONTAINERS-COLOR);
         padding: 5px 2rem 5px 2rem;
         border-radius: 2rem;
     }
@@ -38,7 +49,7 @@ header {
 
 body {
 
-    background-image: linear-gradient(#201c34,#080414);
+    background-image: radial-gradient(circle farthest-corner at 30% 50%,  var(--MAIN-BGCOLOR) 0%, var(--SECONDARY-BGCOLOR) 90% );
     font-size: 1.5rem;
     font-family: inherit;
     display: flex;
@@ -47,7 +58,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: hsl(233, 39%, 12%) ;
+    
 }
 
 .navContainer{
@@ -64,7 +75,7 @@ body {
 }
 
 .styleLink:hover,.styleLink:active{
-    color: hsl(240, 97%, 61%);
+    color: var(--TEXT-HOVER-COLOR);
 }
 
 .introContainer {
@@ -89,7 +100,7 @@ body {
 }
 
 .headers{
-    color: white;
+    color: var(--MAIN-TEXT-COLOR);
 }
 
 .sectionHeaders{
@@ -131,7 +142,7 @@ body {
 .linkButton {
     font-size: 0.8rem;
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    background-color:hsl(233, 39%, 12%);
+    background-color:var(--BUTTON-COLOR);
     border-radius: 1rem;
     border-style: solid;
     border-color: grey;
@@ -139,7 +150,6 @@ body {
     /*TODO: border animations */
     transition: all 0.2 ease;
     text-decoration: none;
-    color: whitesmoke;
 
     transition: all ease 0.2s;
 }
@@ -152,7 +162,7 @@ body {
 
 .linkButton2 {
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    background-color:hsl(233, 39%, 12%);
+    background-color:var(--BUTTON-COLOR);
     border-radius: 0.7rem;
     border-style: solid;
     border-color: grey;
@@ -166,8 +176,6 @@ body {
 .borderButton {
     border-style: dotted;
     border-color: green;
-
-    
 }
 
 .restContainer{
@@ -219,7 +227,7 @@ body {
     padding: 1rem;
     
     border-radius: 0.5rem;
-    box-shadow: -0.5em -0.5em 0.1em 0.1em #131313;
+    box-shadow: -0.5em -0.5em 0.5em 0.1em #131313;
 }
 
 .ExpItemTitles{
@@ -240,13 +248,13 @@ body {
     width: 2px;
     height: 30rem;
     position: absolute;
-    background-color: grey;
+    background-color: whitesmoke;
     margin-left: 1.44rem;
     z-index: -1;
 }
 
 .listSpan{
-    color: hsl(60, 100%, 61%);
+    color: yellowgreen;
     font-size: 2.5rem;
 }
 
@@ -283,9 +291,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    background-color: #1f1f1f;
     
     border-radius: 0.5em;
+
+    background-image: linear-gradient();
+
+    background-color: var(--CONTAINER-COLOR);
 }
 
 .toolSectionWrapper h3{
@@ -294,6 +305,7 @@ body {
     
     transition: transform ease 0.5s;
 }
+
 
 .toolsContainer{
 
@@ -312,8 +324,9 @@ body {
    margin-bottom: 2rem;
    padding: 0.5rem;
    border-radius: 0.5rem;
+   border: 3px;
    border-style:solid;
-   border-color:#444444;
+   border-color:hsl(0, 0%, 25%);
 
    transition: border ease 1s,
                background-color ease 0.5s;
@@ -325,7 +338,7 @@ body {
 
 
 .toolSectionWrapper:hover .toolsContainer{
-    background-color: lightslategrey ;
+    background-color: hsl(0, 0%, 37%);
 }
 
 .tool{ 
@@ -373,7 +386,7 @@ body {
 }
 
 .project{
-    background-color: rgb(52, 2, 85);
+    background-color: #4e598c;
     padding: 0.5rem;
     border-radius: 1.5rem;
     
@@ -449,6 +462,21 @@ body {
     min-height:  60vh;
 }
 
+.aboutItem{
+    
+    margin: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    list-style-type: none;
+}
 
 .aboutMeItems{
     display: flex;
@@ -473,7 +501,7 @@ body {
 .footerItem{
    text-decoration: none;
    font-size: 1rem;
-   color: grey;
+   color: var(--TEXT-COLOR);
 }
 
 @media screen and (min-width: 320px) {
@@ -499,4 +527,4 @@ body {
 
 @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
     
-}
+}           
