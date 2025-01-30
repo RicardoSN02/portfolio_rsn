@@ -196,16 +196,17 @@ body {
 .lists{
     display: flex;
     flex-direction: column;
+    
     gap: 3rem;
 }
 
 .listItem{
-    
     margin: 1rem;
     padding: 1rem;
 
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 2rem;
 
@@ -216,6 +217,7 @@ body {
 }
 
 .workExpItem{
+    flex: 1 1 20px;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -385,7 +387,7 @@ body {
 .card-grid{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -396,6 +398,10 @@ body {
 }
 
 .project{
+    height: 100%;
+    max-width: 450px;
+    flex: 1 1 375px;
+    
     background-color: #4e598c;
     padding: 0.5rem;
     border-radius: 1.5rem;
