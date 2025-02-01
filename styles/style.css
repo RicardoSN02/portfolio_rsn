@@ -28,11 +28,34 @@ html{
     scroll-behavior: smooth;
 }
 
+body {
+    height: 100%;
+    width: 100%;
+
+    background-image: radial-gradient(circle farthest-corner at 30% 50%,  var(--MAIN-BGCOLOR) 0%, var(--SECONDARY-BGCOLOR) 90% );
+  
+    font-size: 1.5rem;
+    font-family: inherit;
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    min-height: 100vh;
+    
+}
+
 header {
+
+    height: 100%;
+    width: 100%;
     margin-top: 0.2rem;
     position: sticky;
     top: 1rem;
     margin-top: 5px;
+
+    max-height: 600px;
 
     animation: nav-animation ease-in-out both;
     animation-timeline: scroll(root);
@@ -47,19 +70,7 @@ header {
     }
 }
 
-body {
 
-    background-image: radial-gradient(circle farthest-corner at 30% 50%,  var(--MAIN-BGCOLOR) 0%, var(--SECONDARY-BGCOLOR) 90% );
-    font-size: 1.5rem;
-    font-family: inherit;
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    
-}
 
 .shadowContainer{
     box-shadow: 0 10px 25px rgba(118, 75, 162, 0.5);
@@ -85,6 +96,7 @@ body {
 .introContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 
     align-items: center; 
     gap: 2rem;
@@ -94,13 +106,15 @@ body {
 
 .introImagen {
     min-height: 250px;
-    min-width: 300px
+    min-width: 250px;
 }
 
 .divIntContainer{
     display: flex;
     flex-direction:column;
     gap: 1.5rem;
+
+    max-height: 600px;
 }
 
 .headers{
@@ -221,8 +235,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    max-width: 550px;
-    max-height: 500px;
+
     
     transition: all ease 0.2s;
 
@@ -265,7 +278,6 @@ body {
 }
 
 .tools{    
-    min-width: 100vh;
     min-height: 100vh;
 }
 
@@ -400,7 +412,7 @@ body {
 .project{
     height: 100%;
     max-width: 450px;
-    flex: 1 1 375px;
+    flex: 1 1 200px;
     
     background-color: #4e598c;
     padding: 0.5rem;
@@ -419,7 +431,6 @@ body {
     padding: 0.8rem;
     border-radius: 2rem;
     
-    
 }
 
 .projectItem{
@@ -436,6 +447,7 @@ body {
 .techlist{
    display: flex;
    flex-direction: row;
+   flex-wrap: wrap;
    gap: 1.5rem;
    list-style-type: none;
 }
@@ -448,9 +460,8 @@ body {
 }
 
 .projectImg{
-    height: 12rem;
-    width: 25rem;
-
+    height: 200px;
+    width: 400px;
     margin-bottom: -4rem;
 
     background-image: url("/imgs/sand.jpg");
@@ -522,12 +533,26 @@ body {
 
 
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .navContainer a{
+        font-size: 0.8rem;
+    }
+    .introContainer{
+        flex-direction: column;
+    }
 
+    .aboutItem {
+        flex-direction: column;
+        
+    }
+
+    
 }
 
-@media screen and (min-width: 481px) {
-
+@media screen and (min-width: 481px) and (max-width: 768){
+    .introContainer{
+        flex-direction: column;
+    }
 }
 
 @media screen and (min-width: 769px) {
