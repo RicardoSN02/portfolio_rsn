@@ -309,7 +309,7 @@ header {
    grid-template-columns: 
            repeat(
            auto-fill,
-           minmax(375px,1fr)
+           minmax(500px,1fr)
            ); 
    gap: 1rem;
 
@@ -357,7 +357,7 @@ header {
    grid-template-columns: 
         repeat(
             auto-fit,
-            minmax(80px,1fr)
+            minmax(90px,1fr)
         );
     
    gap: 0.2em;
@@ -481,7 +481,7 @@ header {
     gap: 0.2rem;
 
     font-size: 0.7rem;
-    background-color: royalblue;
+    background-color: var(--BUTTON-COLOR);
     padding: 0.2rem 1rem 0.2rem 1rem;
     border-radius: 1rem;
 }
@@ -490,6 +490,8 @@ header {
 
 .projectImg{
     height: 100%;
+    max-height: 205px;
+
     max-width: 150%;  
 
     width: 100%;
@@ -520,7 +522,8 @@ header {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    min-height:  60vh;
+    min-height:  90vh;
+    
 }
 
 .aboutItem{
@@ -581,7 +584,7 @@ header {
         grid-template-columns: 
         repeat(
         auto-fill,
-        minmax(200px,1fr)
+        minmax(260px,1fr)
         ); 
     }
 
@@ -600,8 +603,6 @@ header {
     .titleParagraphs {
         font-size: 0.9rem;
     }
-
-    
 
     .aboutItem {
         flex-direction: column;
@@ -623,9 +624,7 @@ header {
         display: none;
     }
 
-    .footer {
-        display: none;
-    }
+
     
 }
 
